@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "minimalapitestaks.name" -}}
+{{- define "minimalapitestv1.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "minimalapitestaks.fullname" -}}
+{{- define "minimalapitestv1.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "minimalapitestaks.chart" -}}
+{{- define "minimalapitestv1.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "minimalapitestaks.labels" -}}
-helm.sh/chart: {{ include "minimalapitestaks.chart" . }}
-{{ include "minimalapitestaks.selectorLabels" . }}
+{{- define "minimalapitestv1.labels" -}}
+helm.sh/chart: {{ include "minimalapitestv1.chart" . }}
+{{ include "minimalapitestv1.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "minimalapitestaks.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "minimalapitestaks.name" . }}
+{{- define "minimalapitestv1.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "minimalapitestv1.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "minimalapitestaks.serviceAccountName" -}}
+{{- define "minimalapitestv1.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "minimalapitestaks.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "minimalapitestv1.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
