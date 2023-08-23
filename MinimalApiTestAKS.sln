@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApiTestAKS", "MinimalApiTestAKS\MinimalApiTestAKS.csproj", "{CF693807-DEF7-4DE5-B498-93898C8F3979}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApiTestAKS-Tests", "MinimalApiTestAKS-Tests\MinimalApiTestAKS-Tests.csproj", "{F4EBCA29-9FA2-4BFF-9FB5-92EFE6C074D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CF693807-DEF7-4DE5-B498-93898C8F3979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF693807-DEF7-4DE5-B498-93898C8F3979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF693807-DEF7-4DE5-B498-93898C8F3979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EBCA29-9FA2-4BFF-9FB5-92EFE6C074D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EBCA29-9FA2-4BFF-9FB5-92EFE6C074D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EBCA29-9FA2-4BFF-9FB5-92EFE6C074D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EBCA29-9FA2-4BFF-9FB5-92EFE6C074D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
