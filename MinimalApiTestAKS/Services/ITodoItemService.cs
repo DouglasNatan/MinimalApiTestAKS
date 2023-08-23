@@ -4,6 +4,6 @@ namespace MinimalApiTestAKS.Services
 {
     public interface ITodoItemService
     {
-      Task<Todo> AddTodo(string? name);
+      Task<Todo> AddTodo(TodoModel model);
     }
 }

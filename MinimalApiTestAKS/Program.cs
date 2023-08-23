@@ -64,8 +64,8 @@ app.MapDelete("/todoitems/{id}", async (int id, TodoDb db) =>
 
 //Tests
 
-app.MapPost("/todotest", async (Todo d, ITodoItemService todoItemService) 
-         => await todoItemService.AddTodo(d.Name));
+app.MapPost("/todotest", async (TodoModel d, ITodoItemService todoItemService) 
+         => await todoItemService.AddTodo(d));
 
 app.Run();
 
