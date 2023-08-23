@@ -1,6 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MinimalApiTestAKS.Models;
+using MinimalApiTestAKS.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Services
+builder.Services.AddTransient<ITodoItemService, TodoItemService>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -34,14 +40,14 @@ app.MapGet("/todoitems/{id}", async (int id, TodoDb db) =>
 app.MapPost("/todoitems", async (Todo todo, TodoDb db) =>{
     db.Todos.Add(todo);
     await db.SaveChangesAsync();
-    return Results.Created($"/todoitems/{todo.Id}", todo);
+    return Results.Created($"/todoitems/{todo.ID}", todo);
 });
 app.MapPut("/todoitems/{id}", async (int id, Todo inputTodo, TodoDb db) =>
 {
     var todo = await db.Todos.FindAsync(id);
-    if (todo is null) return Results.NotFound();
-    todo.Name = inputTodo.Name;
-    todo.IsComplete = inputTodo.IsComplete;
+    if (todo is null && inputTodo is null) return Results.NoContent();
+    todo.SetName(inputTodo.Name);
+    todo.SetIsComplete(inputTodo.IsComplete);
     await db.SaveChangesAsync();
     return Results.NoContent();
 });
@@ -55,4 +61,13 @@ app.MapDelete("/todoitems/{id}", async (int id, TodoDb db) =>
     }
     return Results.NotFound();
 });
+
+//Tests
+
+app.MapPost("/todotest", async (Todo d, ITodoItemService todoItemService) 
+         => await todoItemService.AddTodo(d.Name));
+
 app.Run();
+
+
+public partial class Program { }
