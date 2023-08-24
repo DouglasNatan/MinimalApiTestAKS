@@ -45,7 +45,7 @@ env:
   RESOURCE_GROUP: "rgdouglasgomes"
   CLUSTER_NAME: "aksclusterdouglasgomes"
   CHART_PATH: "./minimalapitestv1/"
-  CHART_OVERRIDE_PATH: "minimalapitestv1/"
+  CHART_OVERRIDE_PATH: "./minimalapitestv1/"
 
 jobs:
   buildImage:
