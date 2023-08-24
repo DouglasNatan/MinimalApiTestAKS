@@ -40,12 +40,12 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: ${{ env.AZURE_CONTAINER_REGISTRY }}
-  CONTAINER_NAME: ${{ env.CONTAINER_NAME }}
-  RESOURCE_GROUP: ${{ env.RESOURCE_GROUP }}
-  CLUSTER_NAME: ${{ env.CLUSTER_NAME }}
-  CHART_PATH: ${{ env.CHART_PATH }}
-  CHART_OVERRIDE_PATH: ${{ env.CHART_OVERRIDE_PATH }}
+  AZURE_CONTAINER_REGISTRY: "acrdouglasgomes"
+  CONTAINER_NAME: "minimalapitestaks"
+  RESOURCE_GROUP: "rgdouglasgomes"
+  CLUSTER_NAME: "aksclusterdouglasgomes"
+  CHART_PATH: "./minimalapitestv1/"
+  CHART_OVERRIDE_PATH: "./minimalapitestv1/"
 
 jobs:
   buildImage:
