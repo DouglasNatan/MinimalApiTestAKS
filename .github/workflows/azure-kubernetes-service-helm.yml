@@ -40,12 +40,12 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
-  CONTAINER_NAME: "your-container-name"
-  RESOURCE_GROUP: "your-resource-group"
-  CLUSTER_NAME: "your-cluster-name"
-  CHART_PATH: "your-chart-path"
-  CHART_OVERRIDE_PATH: "your-chart-override-path"
+  AZURE_CONTAINER_REGISTRY: ${{ env.AZURE_CONTAINER_REGISTRY }}
+  CONTAINER_NAME: ${{ env.CONTAINER_NAME }}
+  RESOURCE_GROUP: ${{ env.RESOURCE_GROUP }}
+  CLUSTER_NAME: ${{ env.CLUSTER_NAME }}
+  CHART_PATH: ${{ env.CHART_PATH }}
+  CHART_OVERRIDE_PATH: ${{ env.CHART_OVERRIDE_PATH }}
 
 jobs:
   buildImage:
