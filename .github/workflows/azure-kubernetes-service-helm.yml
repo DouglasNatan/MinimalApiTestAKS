@@ -44,8 +44,8 @@ env:
   CONTAINER_NAME: "minimalapitestaks"
   RESOURCE_GROUP: "rgdouglasgomes"
   CLUSTER_NAME: "aksclusterdouglasgomes"
-  CHART_PATH: "./minimalapitestv1/"
-  CHART_OVERRIDE_PATH: "./minimalapitestv1/"
+  CHART_PATH: "minimalapitestv1"
+  CHART_OVERRIDE_PATH: "./minimalapitestv1/values.yaml"
   IMAGE_TAG: "v1.0.0"
 
 jobs:
