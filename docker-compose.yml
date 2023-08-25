@@ -7,6 +7,6 @@ services:
     image: minimalapitestaks
     build:
       context: .
-      dockerfile: MinimalApiTestAKS/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - 80:80
